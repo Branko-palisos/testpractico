@@ -20,6 +20,7 @@ public class SharkoBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("cambios de jon");
         healthCount = 5500;
     }
     
