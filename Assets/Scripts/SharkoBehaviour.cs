@@ -26,6 +26,10 @@ public class SharkoBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+    }
+    void Move()
+    {
         if (Input.GetKey("h"))
         {
             transform.eulerAngles = new Vector3(0, -180, 0);
@@ -47,10 +51,7 @@ public class SharkoBehaviour : MonoBehaviour
         yield return new WaitForSeconds(10);
         immune = false;
     }
-    private void Move()
-    { 
-        
-    }
+ 
     internal void TakeDamage(int _amount)
     {
         healthCount -= _amount;
