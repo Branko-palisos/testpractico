@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+//using Unity.VisualScripting;
 public class SharkoBehaviour : MonoBehaviour
 {
     [SerializeField]
@@ -10,21 +10,15 @@ public class SharkoBehaviour : MonoBehaviour
     internal bool immune = false; 
     [SerializeField]
     private int healthCount = 5500;
-   [SerializeField]
-    GameManager gameManager;
-  
     [SerializeField]
-  internal  MeteorBehaviour meteorBehaviour;
-    internal EnemiesController EnemiesController;
-
-    // Start is called before the first frame update
+     GameManager gameManager;
+     [SerializeField]
+     internal  MeteorBehaviour meteorBehaviour;
+     internal EnemiesController EnemiesController;
     void Start()
     {
-        Debug.Log("cambios de jon");
         healthCount = 5500;
     }
-    
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -51,25 +45,26 @@ public class SharkoBehaviour : MonoBehaviour
         immune = true;
         yield return new WaitForSeconds(10);
         immune = false;
-    }
- 
+    }    
     internal void TakeDamage(int _amount)
     {
+        Debug.Log("Sharko take damage 🙀");
         healthCount -= _amount;
-      gameManager.UpdateDamageTMP();
-        gameManager.TakeDamage(1300);
+        if (healthCount < 0)
+        {
+            Debug.Log("You lose");
+        }
+      gameManager.UpdateDamageTMP(healthCount);
         if (immune)
         {
             return; 
-        }
-       
+        }  
     }
     void Victory()
     {
         for (int i = 0; i <= 3; i += 1)
         {
-            EnemiesController.Meteor[i].SetActive(false);
+            EnemiesController.meteors[i].SetActive(false);
         }
-    }
-   
+    }   
 }

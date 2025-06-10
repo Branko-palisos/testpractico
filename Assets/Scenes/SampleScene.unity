@@ -204,11 +204,11 @@ Transform:
   m_GameObject: {fileID: 72381503}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 0.3, y: 1.8, z: 0.089837745}
-  m_LocalScale: {x: 0.86770004, y: 1.0784, z: 1}
+  m_LocalPosition: {x: 0, y: 1.800003, z: 0.089837745}
+  m_LocalScale: {x: 0.8677001, y: 1.0784, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1068895574}
+  m_Father: {fileID: 225876232}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!114 &72381506
 MonoBehaviour:
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharkoBehaviour: {fileID: 714188461}
+  enemiesController: {fileID: 1068895577}
   count: {fileID: 1068895576}
 --- !u!50 &72381507
 Rigidbody2D:
@@ -401,7 +402,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1068895574}
+  - {fileID: 1949666940}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -506,10 +507,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35fa40120223ea47ba62b5bac1f94d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthCount: 5500
   healthCountTMP: {fileID: 2101678040}
   DamageTMP: {fileID: 2101678040}
   amount: -1300
+--- !u!1 &225876231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225876232}
+  m_Layer: 0
+  m_Name: meteor container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &225876232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225876231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 72381505}
+  m_Father: {fileID: 1068895574}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &496689708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 496689709}
+  m_Layer: 0
+  m_Name: meteor container (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &496689709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496689708}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1211732048}
+  m_Father: {fileID: 1068895574}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +665,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &697957840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 697957841}
+  m_Layer: 0
+  m_Name: meteor container (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &697957841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697957840}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1014184839}
+  m_Father: {fileID: 1068895574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714188458
 GameObject:
@@ -702,10 +798,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6227479e41cb86947b91a7048540989f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
   healthCount: 5500
   gameManager: {fileID: 176746961}
-  meteorBehaviour: {fileID: 0}
+  meteorBehaviour: {fileID: 72381506}
 --- !u!50 &714188462
 Rigidbody2D:
   serializedVersion: 4
@@ -808,11 +904,11 @@ Transform:
   m_GameObject: {fileID: 940458214}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 6.58, y: 1.8, z: 0.089837745}
-  m_LocalScale: {x: 0.86770004, y: 1.0784, z: 1}
+  m_LocalPosition: {x: 0.17, y: 1.71, z: 0.089837745}
+  m_LocalScale: {x: 0.8677001, y: 1.0784, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1068895574}
+  m_Father: {fileID: 1182910472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!95 &940458216
 Animator:
@@ -910,6 +1006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharkoBehaviour: {fileID: 714188461}
+  enemiesController: {fileID: 1068895577}
   count: {fileID: 1068895576}
 --- !u!212 &940458220
 SpriteRenderer:
@@ -993,11 +1090,11 @@ Transform:
   m_GameObject: {fileID: 1014184838}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 3.54, y: 1.87, z: 0.089837745}
-  m_LocalScale: {x: 0.86770004, y: 1.0784, z: 1}
+  m_LocalPosition: {x: 0, y: 1.8699951, z: 0.089837745}
+  m_LocalScale: {x: 0.8677001, y: 1.0784, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1068895574}
+  m_Father: {fileID: 697957841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!95 &1014184840
 Animator:
@@ -1095,6 +1192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharkoBehaviour: {fileID: 714188461}
+  enemiesController: {fileID: 1068895577}
   count: {fileID: 1068895576}
 --- !u!212 &1014184844
 SpriteRenderer:
@@ -1158,6 +1256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1068895574}
   - component: {fileID: 1068895576}
+  - component: {fileID: 1068895577}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -1174,17 +1273,16 @@ Transform:
   m_GameObject: {fileID: 1068895573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -288.3525, y: -168.5811, z: -0.089837745}
+  m_LocalPosition: {x: 8.647491, y: -1.5811005, z: -0.089837745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 72381505}
-  - {fileID: 1211732048}
-  - {fileID: 2061218100}
-  - {fileID: 940458215}
-  - {fileID: 1014184839}
-  - {fileID: 1949666940}
-  m_Father: {fileID: 86824033}
+  - {fileID: 225876232}
+  - {fileID: 496689709}
+  - {fileID: 697957841}
+  - {fileID: 1182910472}
+  - {fileID: 2025372215}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1068895576
 MonoBehaviour:
@@ -1198,8 +1296,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720e45b73f8361745a1e61a08cba85cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countInc: 5
-  TM: {fileID: 1949666939}
+  winText: {fileID: 1949666939}
+--- !u!114 &1068895577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068895573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb67a36872610346bbd85da3e7a21d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meteors:
+  - {fileID: 225876231}
+  - {fileID: 496689708}
+  - {fileID: 697957840}
+  - {fileID: 1182910471}
+  - {fileID: 2025372214}
+--- !u!1 &1182910471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1182910472}
+  m_Layer: 0
+  m_Name: meteor container (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1182910472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182910471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 940458215}
+  m_Father: {fileID: 1068895574}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211732047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,11 +1377,11 @@ Transform:
   m_GameObject: {fileID: 1211732047}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -13.44, y: 1.8, z: 0.089837745}
-  m_LocalScale: {x: 0.86770004, y: 1.0784, z: 1}
+  m_LocalPosition: {x: 0, y: 1.800003, z: 0.089837745}
+  m_LocalScale: {x: 0.8677001, y: 1.0784, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1068895574}
+  m_Father: {fileID: 496689709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!95 &1211732049
 Animator:
@@ -1332,6 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharkoBehaviour: {fileID: 714188461}
+  enemiesController: {fileID: 1068895577}
   count: {fileID: 1068895576}
 --- !u!212 &1211732053
 SpriteRenderer:
@@ -1466,7 +1614,7 @@ Transform:
   m_GameObject: {fileID: 1522365507}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.61, y: -0.1, z: 0}
+  m_LocalPosition: {x: -13.4, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1542,7 +1690,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1584,7 +1732,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769432627}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1594,7 +1742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.46975708, y: 0.06603181}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769432629
@@ -1754,17 +1902,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949666939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.089837745}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9532, y: 0.9103, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1068895574}
+  m_Father: {fileID: 86824033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 344.3525, y: 168.5811}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -72, y: 59}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.56738573, y: 0.5366919}
 --- !u!114 &1949666941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1848,7 +1996,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 61.545708, y: -40.384712, z: -33.634136, w: 105.6577}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1891,7 +2039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35fa40120223ea47ba62b5bac1f94d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthCount: 5500
   healthCountTMP: {fileID: 2101678040}
   DamageTMP: {fileID: 2101678040}
   amount: -1300
@@ -1909,6 +2056,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2025372214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2025372215}
+  m_Layer: 0
+  m_Name: meteor container (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2025372215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025372214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2061218100}
+  m_Father: {fileID: 1068895574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061218099
 GameObject:
@@ -1940,11 +2119,11 @@ Transform:
   m_GameObject: {fileID: 2061218099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -5.98, y: 1.66, z: 0.089837745}
-  m_LocalScale: {x: 0.86770004, y: 1.0784, z: 1}
+  m_LocalPosition: {x: 0, y: 1.6600037, z: 0.089837745}
+  m_LocalScale: {x: 0.8677001, y: 1.0784, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1068895574}
+  m_Father: {fileID: 2025372215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!95 &2061218101
 Animator:
@@ -2042,6 +2221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharkoBehaviour: {fileID: 714188461}
+  enemiesController: {fileID: 1068895577}
   count: {fileID: 1068895576}
 --- !u!212 &2061218105
 SpriteRenderer:
@@ -2235,8 +2415,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 176746960}
-  - {fileID: 86824033}
   - {fileID: 714188460}
   - {fileID: 1843661175}
   - {fileID: 1958565835}
   - {fileID: 1522365509}
+  - {fileID: 1068895574}
+  - {fileID: 86824033}

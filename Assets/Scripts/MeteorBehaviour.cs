@@ -1,56 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
-
+//using UnityEngine.Scripting.APIUpdating;
 public class MeteorBehaviour : MonoBehaviour
 {
     [SerializeField]
-    internal SharkoBehaviour sharkoBehaviour;
+    SharkoBehaviour sharkoBehaviour;
+    //string meteor;
     private Vector3 direction;
-    EnemiesController enemiesController;
+    [SerializeField]    
+    private  EnemiesController enemiesController;
+    private int damageAmount = 1000;
     [SerializeField]
      Count count;
-    
-    // Start is called before the first frame update
      void Start()
-    {
-        ChangeDirection(new Vector3(2, -2, 0));
-      
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    internal void ChangeDirection(Vector3 _newDirection)
+     {
+        //ChangeDirection(new Vector3(2, -2, 0));
+     }
+    /*internal void ChangeDirection(Vector3 _newDirection)
     {
         direction = _newDirection;
-    }
+    }*/
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log("collided with " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Sharko"))
-            {
-            if ( sharkoBehaviour.immune == true)
+        if (collision.gameObject.CompareTag("Sharko")) // cambiar string por enum
+         {
+            if (sharkoBehaviour.immune == true) // aser get y set
             {
                 sharkoBehaviour.TakeDamage(0) ;
                 Destroy(gameObject);
-                Debug.Log("qwertyuiopasdfghjklzxcvbnm");
-                enemiesController.Meteor[1].SetActive(true) ;
+                // Debug.Log("sharko is immune");
+                enemiesController.SpawnMeteor(); // aser con evento
             }
-            if(sharkoBehaviour.immune == false)
+            if(sharkoBehaviour.immune == false) // get
             {
-                ChangeDirection(new Vector3(2, -2, 0));
-                collision.gameObject.GetComponent<SharkoBehaviour>().TakeDamage(1300);
-                Debug.Log("Collide");
-                Debug.Log(1300);
-                sharkoBehaviour.TakeDamage(1300);    
+               // ChangeDirection(new Vector3(2, -2, 0));
+                collision.gameObject.GetComponent<SharkoBehaviour>().TakeDamage(damageAmount); // la variable sharko behaviour no se ocupa
+               // Debug.Log("Sharko is not immune");
+              //  Debug.Log("Next meteor");      
             }
-            
-            Destroy(gameObject);
-            count.Countdown();
+            count.Countdown(); // aser esto con eventos
         }   
-    }
+    } 
 }

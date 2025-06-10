@@ -1,30 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
-
-public class HealthBehaviour : MonoBehaviour
-   
+public class HealthBehaviour : MonoBehaviour 
 {
-    MeteorBehaviour meteorBehaviour;            
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    /*MeteorBehaviour meteorBehaviour;            
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("collided with " + collision.gameObject.name)
-            if (collision.gameObject.CompareTag("Sharko"))
+        if (collision.gameObject.CompareTag("Sharko"))
         {
             meteorBehaviour.ChangeDirection  (new Vector3 (8, 8, 0));
             collision.gameObject.GetComponent<SharkoBehaviour>().TakeDamage(1300);
-          
+            Debug.Log("1300!");      
         }
-    }
+    }*/
 }

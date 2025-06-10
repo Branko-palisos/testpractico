@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+// good practices done
+//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 public class EnemiesController : MonoBehaviour
 {
     [SerializeField]
-  internal  GameObject[] Meteor;
+    internal GameObject[] meteors;
+    Count count;
     MeteorBehaviour meteorBehaviour;
-    // Start is called before the first frame update
+    int meteorCount;
     private void Start()
     {
-        for (int i = 0; i <= 3; i += 1) 
+        for (int i = 0; i <= meteors.Length-1; i += 1)
         {
-            Meteor[i].SetActive(false);             
+            meteors[i].SetActive(false);   
+            //  Debug.Log(this.meteors[i]);                                       
         }
-    }    
-    // Update is called once per frame
+        meteors[0].SetActive(true);
+    }
+    internal void SpawnMeteor()
+    {
+        meteorCount += 1;
+        
+        if(meteorCount >= meteors.Length)
+        {
+            return;
+        }
+        meteors[meteorCount].SetActive(true);
+    }
 }
