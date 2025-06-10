@@ -4,12 +4,14 @@ using UnityEngine;
 //using UnityEngine.Scripting.APIUpdating;
 public class MeteorBehaviour : MonoBehaviour
 {
+
+    
+    internal delegate void OnMeteorDestroyed();
+    internal static event OnMeteorDestroyed onMeteorDestroyed;
     [SerializeField]
     SharkoBehaviour sharkoBehaviour;
     //string meteor;
-    private Vector3 direction;
-    [SerializeField]    
-    private  EnemiesController enemiesController;
+    private Vector3 direction; 
     private int damageAmount = 1000;
     [SerializeField]
      Count count;
@@ -23,16 +25,28 @@ public class MeteorBehaviour : MonoBehaviour
     }*/
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Sharko")) // cambiar string por enum
-         {
-            if (sharkoBehaviour.immune == true) // aser get y set
+         if (collision.gameObject.CompareTag(EnumManager.Tags.Sharko.ToString())) 
+         {  
+            if (sharkoBehaviour.GetImmune() == true) 
             {
                 sharkoBehaviour.TakeDamage(0) ;
                 Destroy(gameObject);
                 // Debug.Log("sharko is immune");
-                enemiesController.SpawnMeteor(); // aser con evento
+                if (onMeteorDestroyed != null)
+
+                {
+
+                    // mando la señal
+
+                    onMeteorDestroyed();
+
+                }
+
             }
-            if(sharkoBehaviour.immune == false) // get
+         }
+         
+            if (sharkoBehaviour.GetImmune() == false)        
+
             {
                // ChangeDirection(new Vector3(2, -2, 0));
                 collision.gameObject.GetComponent<SharkoBehaviour>().TakeDamage(damageAmount); // la variable sharko behaviour no se ocupa
@@ -40,6 +54,6 @@ public class MeteorBehaviour : MonoBehaviour
               //  Debug.Log("Next meteor");      
             }
             count.Countdown(); // aser esto con eventos
-        }   
+            
     } 
-}
+ }

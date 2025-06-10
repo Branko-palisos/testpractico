@@ -7,7 +7,7 @@ public class SharkoBehaviour : MonoBehaviour
 {
     [SerializeField]
     private float speed = 5.0f;
-    internal bool immune = false; 
+     bool immune = false; 
     [SerializeField]
     private int healthCount = 5500;
     [SerializeField]
@@ -59,6 +59,14 @@ public class SharkoBehaviour : MonoBehaviour
         {
             return; 
         }  
+    }
+    internal bool GetImmune()
+    {
+        return immune;
+    }
+    internal void SetImmune(bool _newValue)
+    {
+         immune =  _newValue;   
     }
     void Victory()
     {

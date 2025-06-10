@@ -28,4 +28,21 @@ public class EnemiesController : MonoBehaviour
         }
         meteors[meteorCount].SetActive(true);
     }
+    void OnEnable()
+
+    {
+
+        MeteorBehaviour.onMeteorDestroyed += SpawnMeteor;
+
+    }
+
+    // para dejar de escuchar
+
+    void OnDisable()
+
+    {
+
+        MeteorBehaviour.onMeteorDestroyed -= SpawnMeteor;
+
+    }
 }
