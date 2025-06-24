@@ -2,6 +2,7 @@
 //using System.Collections;
 //using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
@@ -17,9 +18,26 @@ public class GameManager : MonoBehaviour
     private int countInc = 5;
     [SerializeField]
     private GameObject winText;
+    private void Awake()
+    {
+        if (gameManager == null)
+        {
+           gameManager = this;
+        }
+        else
+        {
+            Destroy(gameObject);    
+        }
+       DontDestroyOnLoad(this);
+    }
+   
     void Start()
     {
        healthCountTMP.text = 5500.ToString();
+        if (gameManager == null)
+        {
+            gameManager = this;
+        }
     }
     void Countdown()
     {
