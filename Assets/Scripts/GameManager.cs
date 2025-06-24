@@ -1,4 +1,4 @@
-//good practices done
+﻿//good practices done
 //using System.Collections;
 //using System.Collections.Generic;
 using TMPro;
@@ -14,9 +14,22 @@ public class GameManager : MonoBehaviour
     internal static GameManager gameManager;
     [SerializeField]
      float amount = 1300;
+    private int countInc = 5;
+    [SerializeField]
+    private GameObject winText;
     void Start()
     {
        healthCountTMP.text = 5500.ToString();
+    }
+    void Countdown()
+    {
+        countInc -= 1;
+        Debug.Log("CountInc=" + countInc);
+        if (countInc == 0)
+        {
+            winText.SetActive(true);
+            //  Debug.Log(" VGD 🏀🔥");
+        }
     }
     /*private void UpdateHealthCountTMP()
     {
@@ -33,5 +46,14 @@ public class GameManager : MonoBehaviour
     internal void SetAmount(float _amount)
     {
         amount = _amount;
+    }
+    private void OnEnable()
+    {
+        MeteorBehaviour.onMeteorDestroyed += Countdown;
+    }
+    private void OnDisable()
+    {
+        MeteorBehaviour.onMeteorDestroyed
+           -= Countdown;
     }
 }

@@ -3,12 +3,14 @@
 using UnityEngine;
 public class RocketBehaviour : MonoBehaviour
 {             
-    [SerializeField]
     GameManager gameManager;
-    [SerializeField]
     SharkoBehaviour sharkoBehaviour;
     float minX = -9.0f;
     float maxX = 7.0f;
+    private void Start()
+    {
+        gameManager = GameManager.instance;
+    }
     /*
   void  OnCollisionEnter2D(Collision2D collision)
     {
@@ -26,7 +28,6 @@ public class RocketBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Sharko"))
         {
-            Debug.Log("immune");
             gameManager.SetAmount(0);
             //(sharkoBehaviour Oncollision.Meteor)
             sharkoBehaviour.MakeItInvinsible();

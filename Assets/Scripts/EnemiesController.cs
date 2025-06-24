@@ -6,8 +6,7 @@ public class EnemiesController : MonoBehaviour
 {
     [SerializeField]
     internal GameObject[] meteors;
-    Count count;
-    MeteorBehaviour meteorBehaviour;
+     MeteorBehaviour meteorBehaviour;
     int meteorCount;
     private void Start()
     {

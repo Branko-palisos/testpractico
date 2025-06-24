@@ -12,7 +12,8 @@ public class SharkoBehaviour : MonoBehaviour
     private int healthCount = 5500;
     [SerializeField]
      GameManager gameManager;
-     [SerializeField]
+    [SerializeField]
+    public bool stupid = false; 
      internal  MeteorBehaviour meteorBehaviour;
      internal EnemiesController EnemiesController;
     void Start()
@@ -48,7 +49,7 @@ public class SharkoBehaviour : MonoBehaviour
     }    
     internal void TakeDamage(int _amount)
     {
-        Debug.Log("Sharko take damage 🙀");
+       Debug.Log("Sharko take damage 🙀");
         healthCount -= _amount;
         if (healthCount < 0)
         {
