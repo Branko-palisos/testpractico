@@ -65,6 +65,10 @@ public class GameManager : MonoBehaviour
     {
         amount = _amount;
     }
+    internal void SetCountInc (float _amount)
+    {
+        amount = _amount;
+    }
     private void OnEnable()
     {
         MeteorBehaviour.onMeteorDestroyed += Countdown;

@@ -507,7 +507,7 @@ MonoBehaviour:
   healthCountTMP: {fileID: 2101678040}
   DamageTMP: {fileID: 2101678040}
   amount: -1300
-  winText: {fileID: 0}
+  winText: {fileID: 1949666939}
 --- !u!1 &225876231
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,10 +796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6227479e41cb86947b91a7048540989f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  healthCount: 5500
-  gameManager: {fileID: 176746961}
-  stupid: 0
 --- !u!50 &714188462
 Rigidbody2D:
   serializedVersion: 4
@@ -1336,10 +1332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720e45b73f8361745a1e61a08cba85cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countInc: 5
-  winText: {fileID: 1949666939}
-  enemiesController: {fileID: 0}
-  meteorBehaviour: {fileID: 0}
 --- !u!114 &1068895577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,8 +1664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e018ed18da94a1a4289a993840d94c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 176746961}
-  sharkoBehaviour: {fileID: 714188461}
 --- !u!50 &1522365511
 Rigidbody2D:
   serializedVersion: 4

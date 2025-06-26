@@ -1,39 +1,46 @@
 ﻿using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+//using TMPro;
 //using Unity.VisualScripting;
 public class SharkoBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 5.0f;
-     bool immune = false; 
-    [SerializeField]
-    private int healthCount = 5500;
-    [SerializeField]
-     GameManager gameManager;
-    [SerializeField]
-    public bool stupid = false; 
-     internal  MeteorBehaviour meteorBehaviour;
-     internal EnemiesController EnemiesController;
+    float speed = 5.0f;
+    bool immune = false; 
+    int healthCount = 5500;
+    GameManager gameManager;
+    internal  MeteorBehaviour meteorBehaviour;
+    internal EnemiesController EnemiesController;
+    int silentTime = 10;
     void Start()
     {
         healthCount = 5500;
+        gameManager = GameManager.gameManager;
     }
     void Update()
     {
         Move();
+        Rotate();
     }
     void Move()
     {
         if (Input.GetKey("h"))
         {
-            transform.eulerAngles = new Vector3(0, -180, 0);
             transform.position += new Vector3(-1 * speed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey("k"))
         {
             transform.position += new Vector3(1 * speed * Time.deltaTime, 0, 0);
+        }
+    }
+    void Rotate()
+    {
+        if (Input.GetKey("h"))
+        {
+            transform.eulerAngles = new Vector3(0, -180, 0);      
+        }
+        if(Input.GetKey("k"))
+        {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
@@ -44,22 +51,23 @@ public class SharkoBehaviour : MonoBehaviour
     IEnumerator MakeItInvinsibleCR()
     {
         immune = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(silentTime);
         immune = false;
     }    
     internal void TakeDamage(int _amount)
     {
-       Debug.Log("Sharko take damage 🙀");
+        if (immune)
+        {
+            return;
+        }
+        Debug.Log("Sharko take damage 🙀");
         healthCount -= _amount;
+      
         if (healthCount < 0)
         {
             Debug.Log("You lose");
         }
-      gameManager.UpdateDamageTMP(healthCount);
-        if (immune)
-        {
-            return; 
-        }  
+        gameManager.UpdateDamageTMP(healthCount);    
     }
     internal bool GetImmune()
     {

@@ -7,13 +7,16 @@ public class EnemiesController : MonoBehaviour
     [SerializeField]
     internal GameObject[] meteors;
      MeteorBehaviour meteorBehaviour;
+    GameManager gameManager;    
     int meteorCount;
     private void Start()
     {
+        gameManager = GameManager.gameManager;  
+        gameManager.SetCountInc(meteors.Length);    
         for (int i = 0; i <= meteors.Length-1; i += 1)
         {
             meteors[i].SetActive(false);   
-            //  Debug.Log(this.meteors[i]);                                       
+            //  Debug.Log(this.meteors[i]);
         }
         meteors[0].SetActive(true);
     }
